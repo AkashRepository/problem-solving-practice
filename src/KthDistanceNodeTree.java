@@ -8,6 +8,10 @@ class TreeNode {
     TreeNode left;
     TreeNode right;
 
+    TreeNode(int val){
+        this.val = val;
+    }
+
     TreeNode(int x, TreeNode l, TreeNode r) {
         this.left = l;
         this.right = r;
