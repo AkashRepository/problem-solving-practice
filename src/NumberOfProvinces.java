@@ -19,4 +19,8 @@ public class NumberOfProvinces {
                 dfs(isConnected, v, j);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(Math.abs( 5 - Integer.MAX_VALUE));
+    }
 }
