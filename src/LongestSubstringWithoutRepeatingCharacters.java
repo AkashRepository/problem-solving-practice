@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
