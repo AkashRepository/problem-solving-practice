@@ -17,6 +17,15 @@ class TreeNode {
         this.right = r;
         val = x;
     }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "val=" + val +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
+    }
 }
 
 class Graph {

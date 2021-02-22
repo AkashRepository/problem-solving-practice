@@ -13,7 +13,8 @@ public class SerializeDeserializeBinaryTree {
         while(!q.isEmpty() && i<nodes.length){
             TreeNode n = q.poll();
             n.left = getNode(i++, nodes);
-            n.right = getNode(i++, nodes);
+            if(i+1<nodes.length)
+                n.right = getNode(i++, nodes);
             if(n.left!=null)
                 q.add(n.left);
             if(n.right!=null)
