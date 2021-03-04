@@ -2,16 +2,6 @@ import java.util.Arrays;
 
 public class PalindromePartition2 {
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode() {
-        return "".hashCode();
-    }
-
     public static void main(String[] args) {
         PalindromePartition2 o = new PalindromePartition2();
         System.out.println(o.minCut("aab"));
