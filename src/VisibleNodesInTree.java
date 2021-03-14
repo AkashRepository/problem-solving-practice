@@ -1,3 +1,5 @@
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -13,7 +15,7 @@ public class VisibleNodesInTree {
             visibleNodes++;
         }
         ArrayList<Integer> arr = new ArrayList<>();
-        Arrays.stream(new int[]{}).mapToObj(Integer::valueOf).collect(Collectors.toList());
+//        Arrays.stream(new int[]{}).mapToObj(Integer::valueOf).collect(Collectors.toList());
         maximumTillNow = Math.max(node.val, maximumTillNow);
         visibleNodes = maximumVisibleNodes(node.left, maximumTillNow, visibleNodes);
         return maximumVisibleNodes(node.right, maximumTillNow, visibleNodes);

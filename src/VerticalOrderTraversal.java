@@ -1,3 +1,5 @@
+import common.TreeNode;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

@@ -1,3 +1,5 @@
+import common.TreeNode;
+
 public class MaximumDepthBinaryTree {
     public int maxDepth(TreeNode node) {
         if(node == null){

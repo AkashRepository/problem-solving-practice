@@ -1,8 +1,5 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class SecretFruits {
 
@@ -35,7 +32,7 @@ public class SecretFruits {
 
     public static void main(String[] args) {
         SecretFruits o = new SecretFruits();
-        System.out.println(o.matchSecretLists(Arrays.asList(new List[]{Arrays.asList("o",  "m"),Arrays.asList("w",  "m")}),
+        System.out.println(o.matchSecretLists(Arrays.asList(Arrays.asList("o",  "m"),Arrays.asList("w",  "m")),
                 Arrays.asList("o","m", "s", "w","m")));
     }
 

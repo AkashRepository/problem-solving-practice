@@ -1,3 +1,5 @@
+import common.TreeNode;
+
 public class InorderPostorderConstructTree {
 
     private TreeNode buildTree(int[] in, int[] post, int inorderStart, int inorderEnd, int postorderEnd) {

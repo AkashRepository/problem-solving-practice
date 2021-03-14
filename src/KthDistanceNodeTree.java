@@ -1,32 +1,7 @@
-import sun.reflect.generics.tree.Tree;
+import common.TreeNode;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int val){
-        this.val = val;
-    }
-
-    TreeNode(int x, TreeNode l, TreeNode r) {
-        this.left = l;
-        this.right = r;
-        val = x;
-    }
-
-    @Override
-    public String toString() {
-        return "TreeNode{" +
-                "val=" + val +
-                ", left=" + left +
-                ", right=" + right +
-                '}';
-    }
-}
 
 class Graph {
     int v;

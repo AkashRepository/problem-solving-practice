@@ -1,3 +1,5 @@
+import common.TreeNode;
+
 public class SwapTwoNodesInBST {
 
     public static void main(String[] args) {

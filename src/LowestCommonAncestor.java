@@ -1,3 +1,5 @@
+import common.TreeNode;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -85,25 +87,6 @@ public class LowestCommonAncestor {
         }
         eval(node.right, val+1, m);
 
-    }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
     }
 
     public static void main(String[] args) {
