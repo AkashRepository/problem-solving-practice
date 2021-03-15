@@ -1,3 +1,5 @@
+package graph;
+
 import java.util.*;
 
 public class BipartiteGraph {
@@ -6,8 +8,8 @@ public class BipartiteGraph {
         List<Integer> integers = Arrays.asList(1, 1, 1, 1, 1, 1, 1, 0);
         int i1 = Collections.binarySearch(integers,1);
         System.out.println(i1);
-//        BipartiteGraph o = new BipartiteGraph();
-//        System.out.println(o.isBipartite(new int[][]{{3},{2,4},{1},{0,4},{1,3}}));
+        BipartiteGraph o = new BipartiteGraph();
+        System.out.println(o.isBipartite(new int[][]{{3},{2,4},{1},{0,4},{1,3}}));
     }
 
     private boolean notIn(List<Integer> a, int val, int[][] graph){

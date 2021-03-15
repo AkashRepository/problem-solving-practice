@@ -1,3 +1,5 @@
+package trie;
+
 import java.util.*;
 
 public class WordBreak {

@@ -1,3 +1,5 @@
+package bitmanipulation;
+
 public class ConcatenateBinary {
     int mod = 1_000_000_007;
 

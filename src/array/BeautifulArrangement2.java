@@ -1,3 +1,5 @@
+package array;
+
 public class BeautifulArrangement2 {
     public int[] constructArray(int n, int k) {
         int e = 1;

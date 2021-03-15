@@ -1,3 +1,5 @@
+package string;
+
 public class StringBreak {
 
     public static void main(String[] args) {

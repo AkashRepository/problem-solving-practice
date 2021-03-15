@@ -1,3 +1,5 @@
+package dynamicprogramming;
+
 public class BestTimeBuySellStockThree {
 
     public int maxProfit(int[] prices) {

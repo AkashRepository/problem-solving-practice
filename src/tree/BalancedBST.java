@@ -1,3 +1,5 @@
+package tree;
+
 import common.TreeNode;
 
 public class BalancedBST {
