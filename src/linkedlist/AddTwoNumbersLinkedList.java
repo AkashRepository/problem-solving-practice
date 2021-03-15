@@ -1,3 +1,7 @@
+package linkedlist;
+
+import common.ListNode;
+
 public class AddTwoNumbersLinkedList {
 
     public static ListNode stringToListNode(String str) {

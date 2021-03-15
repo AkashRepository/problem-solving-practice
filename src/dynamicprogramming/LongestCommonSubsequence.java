@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.TreeSet;
+package dynamicprogramming;
 
 public class LongestCommonSubsequence {
     public int longestCommonSubsequence(String t1, String t2) {

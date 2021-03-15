@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class ProductTwoNumbersLinkedList {
 
     public static void main(String[] args) {

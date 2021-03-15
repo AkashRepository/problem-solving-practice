@@ -1,10 +1,12 @@
+package dynamicprogramming;
+
 import java.util.Arrays;
 
 public class Dungeon {
 
     public int calculateMinimumHP2(int[][] dungeon) {
         int[][] dp = new int[dungeon.length][dungeon[0].length];
-        for(int a[] : dp){
+        for(int[] a : dp){
             Arrays.fill(a, Integer.MAX_VALUE);
         }
         int out = func(0, 0, 0 , dungeon, dp);

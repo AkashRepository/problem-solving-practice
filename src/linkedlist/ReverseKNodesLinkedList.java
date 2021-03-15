@@ -1,3 +1,7 @@
+package linkedlist;
+
+import common.ListNode;
+
 public class ReverseKNodesLinkedList {
 
     public ListNode solve(ListNode A, int B) {

@@ -1,4 +1,6 @@
-import java.util.List;
+package linkedlist;
+
+import common.ListNode;
 
 public class SortLinkedList {
 
