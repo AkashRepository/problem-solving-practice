@@ -1,38 +1,32 @@
 public class LongestPalindromeSubstring {
 
+    int max = 1;
+    int start = 0;
+    int end = 0;
 
-    private int getMaxPalindromeLength(char[] c, int i, int j, int max){
+    public String longestPalindrome(String A) {
+        int max = 1;// one letter is the minimum palindrome
+        int n = A.length();
+        for(int i=0;i<n-1;i++){
+            getIndexTillPalindrome(A, i, 0);
+            getIndexTillPalindrome(A, i, -1);
+        }
+        return A.substring(start, end+1);
 
-        while(i>=0 && j<c.length && c[i]==c[j]){
-            max=max+2;
+    }
+
+    private void getIndexTillPalindrome(String a, int idx, int evenOdd){
+        int i = idx + evenOdd, j = idx+1;
+        while(i>=0 && j<a.length() && a.charAt(i)==a.charAt(j)){
+
+            if(max < j-i+1){
+                max = j-i+1;
+                start = i;
+                end = j;
+            }
             i--;
             j++;
         }
-        return max;
-    }
-
-    public String longestPalindrome(String s) {
-        char[] c = s.toCharArray();
-        int n = c.length, str = 0, end = 1, max = 1;
-        for(int i=0;i<n-1;i++){
-            int localMax = getMaxPalindromeLength(c, i-1, i+1, 1);
-
-            if(localMax > max){
-                max = localMax;
-                str = i - max/2;
-                end = str + max;
-            }
-
-            localMax = getMaxPalindromeLength(c, i, i+1 , 0);
-            if(localMax > max){
-                max = localMax;
-                str = i - max/2 + 1;
-                end = str + max;
-            }
-
-        }
-
-        return s.substring(str, end );
     }
 
     public static void main(String[] args) {
