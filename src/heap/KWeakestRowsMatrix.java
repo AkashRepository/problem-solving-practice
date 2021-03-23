@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+package heap;
+
 import java.util.Arrays;
-import java.util.List;
 import java.util.PriorityQueue;
 
 public class KWeakestRowsMatrix {
