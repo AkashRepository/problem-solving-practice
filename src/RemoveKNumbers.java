@@ -48,6 +48,6 @@ public class RemoveKNumbers {
     public static void main(String[] args) {
         RemoveKNumbers o = new RemoveKNumbers();
         System.out.println(o.removeKdigits("1234567890",
-                9));
+                4));
     }
 }
