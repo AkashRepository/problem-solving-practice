@@ -4,6 +4,10 @@ import java.util.stream.Collectors;
 
 public class Permutations {
 
+    public static void main(String[] args) {
+
+    }
+
     private void swapping(int[] nums, int i, int j){
         int t = nums[i];
         nums[i] = nums[j];

@@ -5,7 +5,7 @@ import common.TreeNode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class InorderPreorderTraversal {
+public class ConstructBinaryTreeFromInorderPreorder {
 
 
     private TreeNode buildTree(int[] preorder, int[] inorder, int inorderStart, int inorderEnd, int preorderStart){

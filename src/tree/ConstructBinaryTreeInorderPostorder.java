@@ -2,7 +2,7 @@ package tree;
 
 import common.TreeNode;
 
-public class InorderPostorderConstructTree {
+public class ConstructBinaryTreeInorderPostorder {
 
     private TreeNode buildTree(int[] in, int[] post, int inorderStart, int inorderEnd, int postorderEnd) {
 
