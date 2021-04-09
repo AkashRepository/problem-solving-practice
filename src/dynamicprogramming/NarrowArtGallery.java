@@ -3,6 +3,10 @@ package dynamicprogramming;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class NarrowArtGallery {
 
@@ -13,6 +17,7 @@ public class NarrowArtGallery {
             int k = Integer.parseInt(nk[1]);
             int[][] g = new int[n][2];
             int total = 0;
+
             for (int i = 0; i < n; i++) {
                 String[] v = br.readLine().split(" ");
                 g[i][0] = Integer.parseInt(v[0]);

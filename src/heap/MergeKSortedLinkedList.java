@@ -2,6 +2,8 @@ package heap;
 
 import common.ListNode;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -27,44 +29,27 @@ public class MergeKSortedLinkedList {
         return temp.next;
     }
 // divide and conquer
+
     private ListNode merge(ListNode a, ListNode b){
         ListNode out = new ListNode(-1);
-        ListNode merged = null;
+        ListNode merged = out;
         ListNode aa = a;
         ListNode bb = b;
         while(aa!=null && bb!=null){
             if(aa.val <= bb.val){
-                if(merged==null) {
-                    out.next = aa;
-                    merged = aa;
-                } else {
-                    merged.next = aa;
-                    merged = merged.next;
-                }
+                merged.next = aa;
+                merged = merged.next;
                 aa = aa.next;
             } else {
-                if(merged==null) {
-                    out.next = bb;
-                    merged = bb;
-                } else {
-                    merged.next = bb;
-                    merged = merged.next;
-                }
+                merged.next = bb;
+                merged = merged.next;
                 bb = bb.next;
             }
         }
         if(aa!=null){
-            if(merged==null) {
-                out.next = aa;
-            } else {
-                merged.next = aa;
-            }
+            merged.next = aa;
         } else {
-            if(merged==null) {
-                out.next = bb;
-            } else {
-                merged.next = bb;
-            }
+            merged.next = bb;
         }
         // System.out.println(out.next.val);
         return out.next;

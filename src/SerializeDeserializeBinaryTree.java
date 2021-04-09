@@ -1,9 +1,34 @@
 import common.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class SerializeDeserializeBinaryTree {
+
+    public String serialize(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        StringBuilder sb = new StringBuilder();
+        while(!q.isEmpty()){
+            int s = q.size();
+            StringBuilder str = new StringBuilder();
+            boolean flag = false;
+            for(int i=0;i<s;i++){
+                TreeNode n = q.poll();
+                if(n==null){
+                    str.append(",null");
+                } else {
+                    str.append(",").append(n.val);
+                    q.add(n.left);
+                    q.add(n.right);
+                    flag = true;
+                }
+            }
+            if(flag){
+                sb.append(str);
+            }
+        }
+        return sb.toString();
+    }
 
     public TreeNode deserialize(String data) {
         String[] nodes = data.split(",");
