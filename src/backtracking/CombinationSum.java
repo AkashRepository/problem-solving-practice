@@ -1,8 +1,7 @@
 package backtracking;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CombinationSum {
 
@@ -13,6 +12,30 @@ public class CombinationSum {
     }
 
     List<List<Integer>> out = new ArrayList<>();
+
+    private void combination(ArrayList<Integer> a, int b, int idx, int sum, ArrayList<Integer> temp){
+        if(idx>=a.size())
+            return;
+        if(sum>b)
+            return;
+        if(sum==b){
+            out.add(new ArrayList<>(temp));
+            return;
+        }
+        for(int i=idx;i<a.size();i++){
+            temp.add(a.get(i));
+            combination(a, b, i, sum+a.get(i), temp);
+            temp.remove(temp.size()-1);
+        }
+    }
+    //with duplicate elements in input arraylist
+    public ArrayList<ArrayList<Integer>> combinationSum(ArrayList<Integer> A, int B) {
+        ArrayList<Integer> newList = new ArrayList<>(new HashSet<>(A));
+        Collections.sort(newList);
+        // for(int i=0;i<A.size();i++)
+        combination(newList, B, 0, 0, new ArrayList<>());
+        return null;//return out
+    }
     public List<List<Integer>> combinationSum(int[] c, int k) {
 
         out = new ArrayList<>();

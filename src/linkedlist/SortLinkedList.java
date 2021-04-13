@@ -2,23 +2,26 @@ package linkedlist;
 
 import common.ListNode;
 
+/*
+Mergesort
+ */
 public class SortLinkedList {
 
-    public static ListNode stringToLinkedList(String str){
+    public static ListNode stringToLinkedList(String str) {
         ListNode n = new ListNode(-1);
         ListNode t = n;
         String[] s = str.split(",");
-        for (String ss : s){
+        for (String ss : s) {
             n.next = new ListNode(Integer.parseInt(ss));
             n = n.next;
         }
         return t.next;
     }
 
-    public static String linkedListToString(ListNode l){
+    public static String linkedListToString(ListNode l) {
         String str = "";
-        while(l!=null){
-            str = str +","+ l.val;
+        while (l != null) {
+            str = str + "," + l.val;
             l = l.next;
         }
         return str;
@@ -30,24 +33,23 @@ public class SortLinkedList {
     }
 
     public ListNode sortList(ListNode head) {
-        if(head==null)
+        if (head == null)
             return null;
         return dnc(head);
     }
 
-    private ListNode dnc(ListNode n){
-        if(n==null)
+    private ListNode dnc(ListNode n) {
+        if (n == null)
             return n;
-        if(n.next==null)
+        if (n.next == null)
             return n;
-        ListNode fast = n, slow=n, slow2 = null;
-        while(fast!=null && fast.next!=null){
-            slow2 = slow;
+        ListNode fast = n, slow = n;
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        fast = slow;
-        slow2.next = null;
+        fast = slow.next;
+        slow.next = null;
         slow = n;
         ListNode f2 = dnc(fast);
         ListNode f3 = dnc(slow);
@@ -55,12 +57,12 @@ public class SortLinkedList {
         return r;
     }
 
-    private ListNode mergeSort(ListNode a, ListNode b){
+    private ListNode mergeSort(ListNode a, ListNode b) {
         ListNode aa = a, bb = b;
         ListNode r = new ListNode(-1);
         ListNode t = r;
-        while(aa!=null && bb!=null){
-            if(aa.val < bb.val){
+        while (aa != null && bb != null) {
+            if (aa.val < bb.val) {
                 r.next = aa;
                 aa = aa.next;
             } else {
@@ -69,12 +71,12 @@ public class SortLinkedList {
             }
             r = r.next;
         }
-        while(aa!=null){
+        while (aa != null) {
             r.next = aa;
             aa = aa.next;
             r = r.next;
         }
-        while(bb!=null){
+        while (bb != null) {
             r.next = bb;
             bb = bb.next;
             r = r.next;
