@@ -1,6 +1,13 @@
 package array;
 
+import java.util.Arrays;
+
 public class SpiralMatrixTwo {
+
+    public static void main(String[] args) {
+        SpiralMatrixTwo o = new SpiralMatrixTwo();
+        Arrays.stream(o.generateMatrix(4)).map(Arrays::toString).forEach(System.out::println);
+    }
 
     public int[][] generateMatrix(int n) {
         int[][] arr = new int[n][n];
