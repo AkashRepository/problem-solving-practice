@@ -1,7 +1,11 @@
+package hashing;
+
 import java.util.Arrays;
 import java.util.HashSet;
 
 public class PrisonCellsNDays {
+
+    //https://leetcode.com/problems/prison-cells-after-n-days/
 
     public int[] prisonAfterNDays(int[] cells, int N) {
         HashSet<String> hs = new HashSet<>();
