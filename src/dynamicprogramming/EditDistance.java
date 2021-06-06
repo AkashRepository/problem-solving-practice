@@ -1,6 +1,6 @@
 package dynamicprogramming;
 
-public class MinimumDistance {
+public class EditDistance {
 
     public int minDistance(String A, String B) {
         int a = A.length();

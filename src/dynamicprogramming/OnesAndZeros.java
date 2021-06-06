@@ -1,3 +1,5 @@
+package dynamicprogramming;
+
 public class OnesAndZeros {
 
     public int findMaxForm(String[] strs, int m, int n) {

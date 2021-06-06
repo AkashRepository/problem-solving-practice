@@ -80,7 +80,11 @@ public class PalindromePartitionTwo {
 //        backtrack(0, 0, n, arr, new ArrayList<>(), A);
         backtrack(n - 1, n, arr, 1);
         int[] value = new int[n];
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i < n; i++) {
+            if(arr[0][i]!=0) {
+                value[i] = 0;
+                continue;
+            }
             value[i] = Integer.MAX_VALUE;
             for (int j = 0; j < i; j++) {
                 if (arr[j + 1][i]!=0 && value[i] > value[j] + 1) {

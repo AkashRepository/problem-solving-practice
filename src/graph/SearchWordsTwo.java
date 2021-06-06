@@ -1,8 +1,9 @@
+package graph;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class FindWords {
+public class SearchWordsTwo {
 
     public List<String> findWords(char[][] board, String[] words) {
         List<String> out = new ArrayList<>();
@@ -60,7 +61,7 @@ public class FindWords {
     }
 
     public static void main(String[] args) {
-        FindWords o = new FindWords();
+        SearchWordsTwo o = new SearchWordsTwo();
         System.out.println(o.findWords(new char[][] {{'a'}}, new String[]{"a"}));
 //        System.out.println(o.findWords(new char[][]{{'o', 'a', 'a', 'n'}, {'e', 't', 'a', 'e'}, {'i', 'h', 'k', 'r'}, {'i', 'f', 'l', 'v'}}
 //                , new String[]{"oath", "pea", "eat", "rain"}));

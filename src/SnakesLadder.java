@@ -21,34 +21,49 @@ public class SnakesLadder {
         int n = board.length;
         boolean[] visited = new boolean[n*n+1];
         Queue<Node> q = new LinkedList<>();
-        Node first = new Node(1);
-        q.add(first);
+        int[] ls = new int[n*n+1];
+        int row = 1;
+        int t = 1;
+        for(int i=n-1;i>=0;i--){
+            if(row%2==1){
+                for(int j=0;j<n;j++,t++){
+                    if(board[i][j]!=-1){
+                        ls[t] = board[i][j];
+                    }
+                }
+            } else {
+                for(int j=n-1;j>=0;j--,t++){
+                    if(board[i][j]!=-1){
+                        ls[t] = board[i][j];
+                    }
+                }
+            }
+            row++;
+        }
 
+
+        Node first = new Node(1);
+
+        visited[first.val] = true;
+        q.add(first);
+        // System.out.println(Arrays.toString(ls));
         while(!q.isEmpty()){
             Node node = q.poll();
-            visited[node.val] = true;
+
+            if(node.val==n*n){
+                return node.sum;
+            }
             for(int i=node.val+1;i<=node.val+6 && i<=n*n;i++){
 
-                if(!visited[i]){
-                    Node nn = new Node(i);
-                    nn.sum = node.sum + 1;
-                    int idx = (i-1)/n;
-                    int x = n-1-idx ;
-                    int y = 0;
-                    if(idx%2==0){
-                        y = (i-1)%n;
-                    } else {
-                        y = n - (i-1)%n - 1;
-                    }
-                    if(board[x][y]!=-1){
-                        nn.val = board[x][y];
-                    }
-                    if(nn.val==n*n){
-                        return nn.sum;
-                    }
-                    if(!visited[nn.val])
-                        q.add(nn);
-                }
+                Node nn = new Node(i);
+                nn.sum = node.sum + 1;
+                nn.val = ls[nn.val]!=0?ls[nn.val]:i;
+
+                if(visited[nn.val])
+                    continue;
+
+                q.add(nn);
+                visited[nn.val]=true;
             }
         }
         return -1;

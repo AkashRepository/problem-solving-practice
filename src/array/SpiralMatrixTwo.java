@@ -6,7 +6,7 @@ public class SpiralMatrixTwo {
 
     public static void main(String[] args) {
         SpiralMatrixTwo o = new SpiralMatrixTwo();
-        Arrays.stream(o.generateMatrix(4)).map(Arrays::toString).forEach(System.out::println);
+        Arrays.stream(o.generateMatrix(3)).map(Arrays::toString).forEach(System.out::println);
     }
 
     public int[][] generateMatrix(int n) {

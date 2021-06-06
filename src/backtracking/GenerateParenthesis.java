@@ -1,8 +1,7 @@
+package backtracking;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GenerateParenthesis {
 
@@ -29,23 +28,28 @@ public class GenerateParenthesis {
         return o == 0;
     }
 
-    private List<String> generate(int i, int n, int o, int c, String temp, List<String> out) {
-        if (o > n / 2 || c < 0 || c > n / 2 || o < 0 || c>o)
-            return out;
 
-        if (i == n || temp.length() == n) {
-            out.add(temp);
-            return out;
+    private void generate(int i, int n,int o, int c, StringBuilder temp, List<String> out){
+
+        if(o<0 || c<0 || o>n/2 || c>n/2 || c>o)
+            return;
+
+        if(i==n){
+            out.add(temp.toString());
         }
-        generate(i + 1, n, o + 1, c, temp + "(", out);
+        temp.append('(');
+        generate(i+1, n,o+1, c, temp, out);
+        temp.deleteCharAt(temp.length()-1);
 
-        generate(i + 1, n, o, c + 1, temp + ")", out);
-        return out;
+        temp.append(')');
+        generate(i+1, n,o, c+1, temp, out);
+        temp.deleteCharAt(temp.length()-1);
     }
 
     public List<String> generateParenthesis(int n) {
         List<String> out = new ArrayList<>();
-        return generate(0, 2 * n, 0, 0, "", out);
+        generate(0, 2*n, 0, 0, new StringBuilder(), out);
+        return out;
     }
 
 }

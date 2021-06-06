@@ -20,7 +20,7 @@ public class MinimumInsertAtStartingPalindrome {
 
         return n - lps[lps.length-1] -1;
     }
-
+// lps is longest prefix which is also suffix using KMP
     private int[] buildLps(String s) {
         int n = s.length();
         // AACECAAAA$AAAACECAA

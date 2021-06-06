@@ -16,7 +16,6 @@ public class SmallestStringGivenValue {
             }
             diff = k - out - j - 1;
         }
-
         return new String(c);
     }
 

@@ -16,8 +16,6 @@ public class ZigZagLevelOrderTraversal {
         int levelOrder = 1; // as we have added root so now we are at level 1
         Stack<TreeNode> s = new Stack<>(); // as we need to add the nodes in opposite manner as queue
         while(!q.isEmpty()){
-List<Integer> l = new ArrayList<>();
-l.stream().min((a,b) -> a-b).get();
             int size = q.size();
             List<Integer> o = new ArrayList<>();
             while(size-->0){

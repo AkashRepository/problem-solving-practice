@@ -49,7 +49,6 @@ public class CriticalConnections {
         int[] low = new int[n];
         int[] ids = new int[n];
         Arrays.fill(ids, -1);
-        boolean[] onStack = new boolean[n];
 
         List<List<Integer>> out = new ArrayList<>();
         Stack<Integer> stack = new Stack<>();

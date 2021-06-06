@@ -1,5 +1,6 @@
+package greedy;
+
 import java.util.Arrays;
-import java.util.PriorityQueue;
 import java.util.TreeSet;
 
 public class MinimumDeviationInArray {

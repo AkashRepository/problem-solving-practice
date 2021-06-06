@@ -1,3 +1,5 @@
+package trie;
+
 import java.util.HashMap;
 
 public class MaximumXORTwoNumber {
@@ -9,17 +11,13 @@ public class MaximumXORTwoNumber {
     private void toBinaryString(int a, Node node){
         Node current = node;
         for(int i=31;i>=0;i--){
-            int idx = a & (1<<i);
+            int idx = a & (1<<i); // check if ith bit is set
 
-            if(idx==0){
-                if(current.nodes[0] ==null)
-                    current.nodes[0] = new Node();
-                current = current.nodes[0];
-            } else {
-                if(current.nodes[1]==null)
-                    current.nodes[1] = new Node();
-                current = current.nodes[1];
-            }
+            idx = idx == 0 ? idx : 1;
+
+            if(current.nodes[idx] ==null)
+                current.nodes[idx] = new Node();
+            current = current.nodes[idx];
         }
     }
 
@@ -30,14 +28,14 @@ public class MaximumXORTwoNumber {
         int out = 0;
         for(int i=31;i>=0;i--){
             int j = a & (1<<i);
-            int idx = j==0?1:0;
+            j = j == 0 ? j : 1;
+            int idx = j ^ 1; // change, if j == 0 then j = 1 else j == 1 then j = 0;
             if(current.nodes[idx]!=null){
                 out = out<<1;
                 out = out | 1;
                 current = current.nodes[idx];
             } else {
                 out = out<<1;
-                j = j==0?0:1;
                 current = current.nodes[j];
             }
 

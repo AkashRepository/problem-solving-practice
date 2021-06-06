@@ -7,29 +7,9 @@ Mergesort
  */
 public class SortLinkedList {
 
-    public static ListNode stringToLinkedList(String str) {
-        ListNode n = new ListNode(-1);
-        ListNode t = n;
-        String[] s = str.split(",");
-        for (String ss : s) {
-            n.next = new ListNode(Integer.parseInt(ss));
-            n = n.next;
-        }
-        return t.next;
-    }
-
-    public static String linkedListToString(ListNode l) {
-        String str = "";
-        while (l != null) {
-            str = str + "," + l.val;
-            l = l.next;
-        }
-        return str;
-    }
-
     public static void main(String[] args) {
-        ListNode n = stringToLinkedList("-1,5,3,4,0");
-        System.out.println(linkedListToString(new SortLinkedList().sortList(n)));
+        ListNode n = ListNode.stringToLinkedList("-1,5,3,4,0");
+        System.out.println(ListNode.linkedListToString(new SortLinkedList().sortList(n)));
     }
 
     public ListNode sortList(ListNode head) {

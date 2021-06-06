@@ -1,3 +1,5 @@
+package dynamicprogramming;
+
 import java.util.ArrayList;
 
 public class ZeroOneKnapsack {

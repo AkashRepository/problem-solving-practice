@@ -2,11 +2,9 @@ package linkedlist;
 
 import common.ListNode;
 
-import java.util.List;
-
-public class Partiotion {
+public class Partition {
     public static void main(String[] args) {
-        Partiotion o = new Partiotion();
+        Partition o = new Partition();
 //        ListNode a = new ListNode(1);
         ListNode b = new ListNode(4);
 //        a.next = b;

@@ -6,7 +6,7 @@ public class RussianDolls {
 
     public static void main(String[] args) {
         RussianDolls o  = new RussianDolls();
-        o.maxEnvelopes(new int[][]{{5,7},{9,10},{8,11},{11,13},{16,17},{14,19}});
+        System.out.println(o.maxEnvelopes(new int[][]{{5,7},{9,10},{8,11},{11,13},{16,17},{14,19}}));
     }
 
     public int maxEnvelopes(int[][] arr) {
