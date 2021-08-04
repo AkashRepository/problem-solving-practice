@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class WordLadderTwo {
 
@@ -79,9 +80,99 @@ public class WordLadderTwo {
 
     public static void main(String[] args) {
         WordLadderTwo o = new WordLadderTwo();
-        System.out.println(o.findLadders("hit",
+        System.out.println(o.findLadders2("hit",
                 "cog",
                 new ArrayList<>(Arrays.asList("hot","dot","dog","lot","log","cog"))));
+    }
+
+
+    class Node {
+        Node[] arr;
+        char c;
+        String word;
+        boolean isWord;
+
+        public Node(char c){
+            this.c=c;
+            this.arr = new Node[26];
+        }
+    }
+
+    private void insert(Node root, String s){
+        Node node = root;
+
+        for(char c: s.toCharArray()){
+            int idx = c-'a';
+            if(node.arr[idx]==null){
+                node.arr[idx] = new Node(c);
+            }
+            node = node.arr[idx];
+        }
+        node.isWord = true;
+        node.word = s;
+    }
+
+    private void search(char[] c, int i, int idx, int n, Node node, Node root, String target, List<String> list){
+
+        if(node==null)
+            return;
+        if(i>n)
+            return;
+        if(node.isWord){
+            search(root, node.word, target, list);
+            return;
+        }
+
+        if(i!=idx){
+            search(c, i+1, idx, n, node.arr[c[i]-'a'], root, target, list);
+        } else {
+            for(Node nn : node.arr){
+                search(c, i+1, idx, n, nn, root, target, list);
+            }
+        }
+    }
+
+
+    private void search(Node root, String word, String target, List<String> list) {
+
+        int n = word.length();
+
+        if(word.equals(target)){
+            list.add(target);
+            v.add(target);
+            out.add(new ArrayList<>(list));
+            return;
+        }
+        ArrayList<String> arrayToList = new ArrayList<>();
+        List<String> filteredList = arrayToList.stream().filter(str -> !str.equals("")).collect(Collectors.toList());
+        arrayToList = new ArrayList<>(filteredList);
+        
+        list.add(word);
+        v.add(word);
+        for(int i=0;i<n;i++){
+            char[] c = word.toCharArray();
+            search(c, 0, i, n, root, root, target, list);
+        }
+        list.remove(list.size()-1);
+        v.remove(word);
+
+    }
+
+    HashSet<String> v;
+    List<List<String>> out = new ArrayList<>();
+
+    public List<List<String>> findLadders2(String beginWord, String endWord, List<String> wordList) {
+        int size = wordList.size();
+        v = new HashSet<>(size);
+        Node root = new Node('/');
+
+        for(String word: wordList){
+            insert(root, word);
+        }
+
+        List<String> list = new ArrayList<>();
+        search(root, beginWord, endWord, list);
+        return out;
     }
 
 }
