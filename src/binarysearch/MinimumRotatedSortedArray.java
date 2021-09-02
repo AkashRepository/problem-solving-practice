@@ -8,8 +8,6 @@ public class MinimumRotatedSortedArray {
         int l = nums.length;
         int s = 0;
         return binarySearch(s, l - 1, nums);
-
-
     }
 
     public int binarySearch(int s, int l, int[] nums) {

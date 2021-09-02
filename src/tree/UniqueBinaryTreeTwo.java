@@ -2,8 +2,7 @@ package tree;
 
 import common.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class UniqueBinaryTreeTwo {
 
@@ -12,7 +11,7 @@ public class UniqueBinaryTreeTwo {
         return traversal(1, n, dp);
     }
 
-    public List<TreeNode> traversal(int s, int e, List<TreeNode>[][] arr) {
+    public List<TreeNode> traversal(int s, int e, List<TreeNode>[][] dp) {
 
         List<TreeNode> out = new ArrayList<>();
         if (s > e) {
@@ -20,13 +19,13 @@ public class UniqueBinaryTreeTwo {
             return out;
         }
 
-        if (arr[s][e] != null)
-            return arr[s][e];
+        if (dp[s][e] != null)
+            return dp[s][e];
 
         for (int i = s; i <= e; i++) {
 
-            List<TreeNode> left = traversal(s, i - 1, arr);
-            List<TreeNode> right = traversal(i + 1, e, arr);
+            List<TreeNode> left = traversal(s, i - 1, dp);
+            List<TreeNode> right = traversal(i + 1, e, dp);
 
             for (TreeNode a : left) {
                 for (TreeNode b : right) {
@@ -37,7 +36,7 @@ public class UniqueBinaryTreeTwo {
                 }
             }
         }
-        arr[s][e] = out;
+        dp[s][e] = out;
 
         return out;
     }
