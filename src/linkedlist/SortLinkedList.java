@@ -5,7 +5,7 @@ import common.ListNode;
 /*
 Mergesort
  */
-public class SortLinkedList {
+public class liSortLinkedList {
 
     public static void main(String[] args) {
         ListNode n = ListNode.stringToLinkedList("-1,5,3,4,0");
